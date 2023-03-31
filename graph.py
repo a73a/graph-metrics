@@ -16,8 +16,10 @@ class Link:
         self.target = target
 
 class Graph:
-    def __init__(self, id, nodes, links):
-        self.id = id
+    graph_id = 0
+    def __init__(self, nodes, links):
+        Graph.graph_id += 1
+        self.id = Graph.graph_id
         self.nodes = nodes
         self.links = links
     @classmethod
@@ -32,7 +34,7 @@ class Graph:
         for link_json in data["links"]:
             link = Link(link_json['id'], link_json['source'], link_json['target'])
             links.append(link)
-        return Graph(1, nodes, links)
+        return Graph(nodes, links)
     def node_index(self, id):
         for i, node_element in enumerate(self.nodes):
             if id == node_element.id:
@@ -50,4 +52,3 @@ class Graph:
         return len(self.nodes)
     def edge_counts(self):
         return len(self.links)
-    
