@@ -147,7 +147,7 @@ class Graph:
                         links.append(self.links_by_node_indexes[(i, j)])
             subgraphs.append(Graph(nodes, links))
         return subgraphs
-    
+
     def subgraphs_count(self):
         return len(self.subgraphs())
 
@@ -181,7 +181,7 @@ class Graph:
         for i in range(self.n):
             eigenvectors_dict[self.nodes[i].id] = eigenvector[i]
         return eigenvectors_dict
-    
+
     # def betweenness_centrality(self):
     #     # brandes algorithm for betweenness centrality in unweighted graphs
     #     betweenness = [0 for i in range(self.n)]
@@ -217,7 +217,7 @@ class Graph:
     #                 delta[v] += (sigma[v] / sigma[w]) * (1 + delta[w])
     #             if w != s:
     #                 betweenness[w] += delta[w]
-                    
+
     #     betweenness_dict = {}
     #     for i in range(self.n):
     #         betweenness_dict[self.nodes[i].id] = betweenness[i]

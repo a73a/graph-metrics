@@ -45,6 +45,7 @@ def test_subgraphs(graph, graph_nx):
                              for graph in nx.connected_components(graph_nx))
     assert actual_subgraphs == expected_subgraphs
 
+
 def test_subgraphs_count(graph, graph_nx):
     actual_count = graph.subgraphs_count()
     expected_count = len(set(frozenset(graph)
