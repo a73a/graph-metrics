@@ -147,6 +147,9 @@ class Graph:
                         links.append(self.links_by_node_indexes[(i, j)])
             subgraphs.append(Graph(nodes, links))
         return subgraphs
+    
+    def subgraphs_count(self):
+        return len(self.subgraphs())
 
     def eigenvector_centrality(self):
         # use power iteration method to compute largest eigenvalue
